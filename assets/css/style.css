@@ -40,6 +40,10 @@ header p {
     white-space: nowrap;
 }
 
+header a {
+    color: white;
+}
+
 nav ul {
     list-style: none;
     display: flex;

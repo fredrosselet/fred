@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +8,8 @@
 
 /* body */
 body {
-    font-family: Baskerville;
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    -webkit-font-smoothing: antialiased;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -68,20 +71,67 @@ a {
     cursor: pointer;
 }
 
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
-        align-items: center;
+        position: relative;
+        padding: 1rem 1.5rem;
     }
 
-    header p {
-        display: none;
+    .nav-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
     }
 
     nav ul {
+        display: none;
         flex-direction: column;
         align-items: center;
         gap: 0;
+        width: 100%;
+        background-color: #050f41d9;
+        padding: 0.5rem 0;
+    }
+
+    nav ul.nav-open {
+        display: flex;
     }
 }
 

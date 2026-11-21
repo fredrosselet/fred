@@ -6,6 +6,18 @@
     box-sizing: border-box;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* body */
 body {
     font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
@@ -352,4 +364,21 @@ footer {
 
 .contact-content button:hover {
     background: #800000;
+}
+
+.contact-content button:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+#contact-status {
+    height: 20px;
+}
+
+#contact-status.success {
+    color: #2a7a2a;
+}
+
+#contact-status.error {
+    color: #6a0707e5;
 }

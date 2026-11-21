@@ -34,7 +34,12 @@
 </header>
 <main>
     <div class="contact-content">
-        <form action="mailto:fred.rosselet@gmail.com" method="post" enctype="text/plain">
+        <h1 class="sr-only">Contact</h1>
+        <form id="contact-form">
+            <input type="hidden" name="access_key" value="f736511c-08c6-4e7b-90ee-74188ef4b928">
+            <input type="hidden" name="subject" value="New message from fredericrosselet.com">
+            <input type="checkbox" name="botcheck" style="display: none;">
+
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -42,15 +47,17 @@
             <input type="email" id="email" name="email" required>
 
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" maxlength="500"required></textarea>
+            <textarea id="message" name="message" rows="4" maxlength="500" required></textarea>
 
             <button type="submit">Send Message</button>
+            <p id="contact-status"></p>
         </form>
     </div>
 </main>
 <footer>
     <p>&copy; 2026 Frederic Rosselet</p>
 </footer>
+<script src="../assets/js/contact.js"></script>
 <script src="../assets/js/nav.js"></script>
 </body>
 </html>
